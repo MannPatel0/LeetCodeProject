@@ -1,6 +1,5 @@
 {
   "version": 2,
-  "name": "leetcode_api",
   "builds": [
     {
       "src": "server.js",
