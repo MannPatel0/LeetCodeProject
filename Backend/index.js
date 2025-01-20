@@ -33,7 +33,7 @@ let leet = require("./leetcode");
 //   res.sendFile(path.join(__dirname, "public", "index.html"));
 // });
 
-app.get("/problems", (req, res) => {
+app.get("/", (req, res) => {
   res.json(data);
 });
 
