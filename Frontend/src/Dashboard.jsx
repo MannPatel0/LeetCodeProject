@@ -307,10 +307,12 @@ const Dashboard = () => {
         problem.companies.includes(selectedCompany)),
   );
 
+  const totalProblems = problems.length;
+
   const getProgressPercentage = () => {
     if (!userData) return 0;
-    const { totalSolved, totalQuestions } = userData;
-    return Math.round((totalSolved / totalQuestions) * 100);
+    const { totalSolved } = userData;
+    return Math.round((totalSolved / totalProblems) * 100);
   };
 
   const isProblemCompleted = (problemTitle) => {
@@ -341,7 +343,7 @@ const Dashboard = () => {
               {isDark ? <Sun size={20} /> : <Moon size={20} />}
             </button>
             <a
-              href="https://github.com"
+              href="https://github.com/mannpatel0"
               className={`${theme.hover} transition-colors`}
             >
               <Github size={20} />
@@ -460,8 +462,7 @@ const Dashboard = () => {
               </div>
               <div>
                 <p className={`text-sm ${theme.textSecondary}`}>
-                  Solved: {userData?.totalSolved || 0}/
-                  {userData?.totalQuestions || 0}
+                  Solved: {userData?.totalSolved || 0} / {totalProblems || 0}
                 </p>
               </div>
             </div>
