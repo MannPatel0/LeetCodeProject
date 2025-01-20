@@ -1,13 +1,5 @@
-import React, { useEffect, useState } from "react";
-import {
-  Sun,
-  Moon,
-  Github,
-  CheckCircle,
-  Settings,
-  LogOut,
-  WebhookIcon,
-} from "lucide-react";
+import { useEffect, useState } from "react";
+import { Sun, Moon, Github, CheckCircle, Settings } from "lucide-react";
 
 const themes = {
   dark: {
@@ -272,7 +264,9 @@ const Dashboard = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch(`http://localhost:3000/${username}`);
+      const response = await fetch(
+        `${import.meta.env.VITE_GETUSER}${username}`,
+      );
       const data = await response.json();
       setUserData(data);
     } catch (error) {
@@ -290,7 +284,7 @@ const Dashboard = () => {
 
   const fetchProblems = async () => {
     try {
-      const response = await fetch("http://localhost:3000/problems");
+      const response = await fetch(import.meta.env.VITE_GETPROBLEMS);
       const data = await response.json();
       setProblems(data);
     } catch (error) {
@@ -347,12 +341,6 @@ const Dashboard = () => {
               className={`${theme.hover} transition-colors`}
             >
               <Github size={20} />
-            </a>
-            <a
-              href="https://mannpatel0.github.io"
-              className={`${theme.hover} transition-colors`}
-            >
-              <WebhookIcon size={20} />
             </a>
             <button
               onClick={() => setShowSettings(true)}
