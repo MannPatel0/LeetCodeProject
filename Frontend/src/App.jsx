@@ -1,5 +1,4 @@
 import Dashboard from "./Dashboard";
-import Profile from "./Profile";
 
 function App() {
   return (
