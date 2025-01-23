@@ -309,7 +309,7 @@
     const getProgressPercentage = () => {
       if (!userData) return 0;
       const { totalSolved } = userData;
-      return Math.round((totalSolved / totalProblems) * 100);
+      return Math.round((totalSolved / 174) * 100);
     };
 
     const isProblemCompleted = (problemTitle) => {
