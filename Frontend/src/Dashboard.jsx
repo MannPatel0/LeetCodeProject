@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Sun, Moon, Github, CheckCircle, Settings } from "lucide-react";
 import dotenv from "dotenv";
 
-require("dotenv").config();
 
 const themes = {
   dark: {
@@ -268,7 +267,7 @@ const Dashboard = () => {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_GETUSER}${username}`,
+        `${import.meta.env.VITE_GETUSER}${username}`
       );
       const data = await response.json();
       setUserData(data);
@@ -288,7 +287,7 @@ const Dashboard = () => {
   const fetchProblems = async () => {
     try {
       //import.meta.env.VITE_GETPROBLEMS
-      const response = await fetch("http://localhost:3000/");
+      const response = await fetch("https://leetcodeproject.onrender.com/");
       const data = await response.json();
       setProblems(data);
     } catch (error) {
