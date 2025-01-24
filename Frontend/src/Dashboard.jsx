@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import { Sun, Moon, Github, CheckCircle, Settings } from "lucide-react";
+import dotenv from "dotenv";
+
+require("dotenv").config();
 
 const themes = {
   dark: {
@@ -284,7 +287,8 @@ const Dashboard = () => {
 
   const fetchProblems = async () => {
     try {
-      const response = await fetch(import.meta.env.VITE_GETPROBLEMS);
+      //import.meta.env.VITE_GETPROBLEMS
+      const response = await fetch("http://localhost:3000/");
       const data = await response.json();
       setProblems(data);
     } catch (error) {
