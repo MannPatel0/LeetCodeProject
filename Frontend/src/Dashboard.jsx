@@ -339,7 +339,12 @@
               >
                 {isDark ? <Sun size={20} /> : <Moon size={20} />}
               </button>
-
+              <a
+              href="https://github.com/mannpatel0/LeetCodeproject"
+              className={`${theme.hover} transition-colors`}
+            >
+              <Github size={20} />
+            </a>
               <button
                 onClick={() => setShowSettings(true)}
                 className={`p-2 rounded-lg ${theme.hover} transition-colors`}
